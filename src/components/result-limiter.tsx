@@ -1,9 +1,3 @@
-/**
- * This is where you will choose number of results to include
- * 25, 50,
-75, 100, 200 default to 100)
- */
-
 import React from 'react';
 
 interface IResultLimiterProps {
@@ -16,7 +10,6 @@ export const ResultLimiter = React.memo((props: IResultLimiterProps): JSX.Elemen
   return (
     <div>
       <label htmlFor="result-limiter">How many results: </label>
-
       <select name="results" id="result-limiter" defaultValue={resultLimit} onChange={changeResultLimit}>
         <option value="25">25</option>
         <option value="50">50</option>

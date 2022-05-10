@@ -1,7 +1,3 @@
-/**
- * This is where the date-picker will live
- */
-
 import React from 'react';
 
 interface IDatePickerProps {
