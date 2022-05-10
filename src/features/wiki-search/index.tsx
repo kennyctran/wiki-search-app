@@ -4,19 +4,24 @@ import { format } from 'date-fns';
 import { ResultLimiter } from '../../components/result-limiter';
 import { getArticles } from '../../api/wiki-service';
 import { Articles } from '../../components/articles';
+import { getYesterday } from '../../helpers/date';
+import { usePinnedArticles } from '../../hooks/use-pinned-articles';
+
+export enum LocalStorageKeys {
+  PinnedArticles = 'pinned-articles'
+}
 
 export const WikiSearch = () => {
   const [selectedDate, setSelectedDate] = useState(() => {
-    const date = new Date();
-    date.setDate(date.getDate() - 1);
     // One time init of yyyy-MM-dd instead of yyyy/MM/dd to correctly set default on native Date picker
-    return format(date, 'yyyy-MM-dd');
+    return getYesterday('yyyy/MM/dd');
   });
   const [selectedResultLimit, setSelectedResultLimit] = useState(100);
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
   // TODO: Add init of state that reads from localStorage pinned searches
     // on selection of new search, update state, add to localStorage
+  const { pinnedArticles, pinArticle, unpinArticle } = usePinnedArticles();
 
   const handleDateChange = useCallback((e: React.FormEvent<HTMLInputElement>): void => {
     // should be formatted yyyy/MM/dd
@@ -39,9 +44,12 @@ export const WikiSearch = () => {
 
   return (
     <div id="wiki-search-feature">
-      <DatePicker handleDateChange={handleDateChange} selectedDate={selectedDate}/>
+      <Articles articles={pinnedArticles} handleRemove={unpinArticle}/>
+      <br />
+      <br />
+      <DatePicker handleDateChange={handleDateChange} />
       <ResultLimiter resultLimit={selectedResultLimit} changeResultLimit={handleResultLimitChange}/>
-      { loading ? <h1>Loading...</h1> : <Articles articles={articles} limit={selectedResultLimit}/> }
+      { loading ? <h1>Loading...</h1> : <Articles articles={articles} limit={selectedResultLimit} handleSave={pinArticle}/> }
     </div>
   );
 }
