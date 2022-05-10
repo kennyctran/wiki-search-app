@@ -6,8 +6,12 @@ import { getArticles } from '../../api/wiki-service';
 import { Articles } from '../../components/articles';
 
 export const WikiSearch = () => {
-  // default date set with - instead of / for native Date default Value
-  const [selectedDate, setSelectedDate] = useState(() => format(new Date(), 'yyyy-MM-dd'));
+  const [selectedDate, setSelectedDate] = useState(() => {
+    const date = new Date();
+    date.setDate(date.getDate() - 1);
+    // One time init of yyyy-MM-dd instead of yyyy/MM/dd to correctly set default on native Date picker
+    return format(date, 'yyyy-MM-dd');
+  });
   const [selectedResultLimit, setSelectedResultLimit] = useState(100);
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
