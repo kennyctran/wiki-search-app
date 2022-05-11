@@ -1,4 +1,3 @@
-import React from 'react';
 import { WikiSearch } from './features/wiki-search';
 
 function App() {

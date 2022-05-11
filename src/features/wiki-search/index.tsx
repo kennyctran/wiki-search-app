@@ -1,9 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { DatePicker } from '../../components/date-picker';
+import { DatePicker } from '../../components/date-picker/date-picker';
 import { format } from 'date-fns';
-import { ResultLimiter } from '../../components/result-limiter';
+import { ResultLimiter } from '../../components/result-limiter/result-limiter';
 import { getArticles } from '../../api/wiki-service';
-import { Articles } from '../../components/articles';
+import { Articles } from '../../components/articles/articles';
+import { IArticle } from '../../components/article/article';
 import { getYesterday } from '../../helpers/date';
 import { usePinnedArticles } from '../../hooks/use-pinned-articles';
 
@@ -16,11 +17,9 @@ export const WikiSearch = () => {
     // One time init of yyyy-MM-dd instead of yyyy/MM/dd to correctly set default on native Date picker
     return getYesterday('yyyy/MM/dd');
   });
-  const [selectedResultLimit, setSelectedResultLimit] = useState(100);
-  const [articles, setArticles] = useState([]);
+  const [selectedResultLimit, setSelectedResultLimit] = useState<number>(100);
+  const [articles, setArticles] = useState<IArticle[]>([]);
   const [loading, setLoading] = useState(false);
-  // TODO: Add init of state that reads from localStorage pinned searches
-    // on selection of new search, update state, add to localStorage
   const { pinnedArticles, pinArticle, unpinArticle } = usePinnedArticles();
 
   const handleDateChange = useCallback((e: React.FormEvent<HTMLInputElement>): void => {
@@ -44,7 +43,7 @@ export const WikiSearch = () => {
 
   return (
     <div id="wiki-search-feature">
-      <Articles articles={pinnedArticles} handleRemove={unpinArticle}/>
+      <Articles articles={pinnedArticles} handleRemove={unpinArticle} />
       <br />
       <br />
       <DatePicker handleDateChange={handleDateChange} />

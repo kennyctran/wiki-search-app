@@ -1,0 +1,7 @@
+.articles-container {
+  background-color: purple;
+  flex: auto;
+  flex-wrap: wrap;
+}
+
+/* breakpoints desktop @ and mobile @ */
