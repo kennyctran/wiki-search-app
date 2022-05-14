@@ -1,7 +1,7 @@
 .articles-container {
-  background-color: purple;
-  flex: auto;
-  flex-wrap: wrap;
+  width: 50%;
+  min-width: 225px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
-
-/* breakpoints desktop @ and mobile @ */

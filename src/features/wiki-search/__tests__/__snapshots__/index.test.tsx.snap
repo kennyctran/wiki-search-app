@@ -1,0 +1,302 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Wiki Search App should match snapshot with articles 1`] = `
+<div>
+  <div
+    id="wiki-search-feature"
+  >
+    <h1
+      class="app-title"
+    >
+      Most Popular Pages Search
+    </h1>
+    <aside
+      class="pinned-articles-container"
+    >
+      <h2>
+        Pinned Pages: 
+      </h2>
+      <article
+        class="articles-container"
+      >
+        <div
+          class="article-container"
+        >
+          <h3
+            class="article-title"
+          >
+            <span>
+              1
+              .
+               
+            </span>
+            test title 0
+          </h3>
+          <div
+            class="article-views-container"
+          >
+            <span>
+              views:
+            </span>
+             
+            <span>
+              1
+            </span>
+          </div>
+          <div
+            class="button-container"
+          >
+            <button
+              data-testid="remove-button"
+            >
+              <span>
+                remove
+              </span>
+            </button>
+          </div>
+        </div>
+        <div
+          class="article-container"
+        >
+          <h3
+            class="article-title"
+          >
+            <span>
+              2
+              .
+               
+            </span>
+            test title 1
+          </h3>
+          <div
+            class="article-views-container"
+          >
+            <span>
+              views:
+            </span>
+             
+            <span>
+              1
+            </span>
+          </div>
+          <div
+            class="button-container"
+          >
+            <button
+              data-testid="remove-button"
+            >
+              <span>
+                remove
+              </span>
+            </button>
+          </div>
+        </div>
+        <div
+          class="article-container"
+        >
+          <h3
+            class="article-title"
+          >
+            <span>
+              3
+              .
+               
+            </span>
+            test title 2
+          </h3>
+          <div
+            class="article-views-container"
+          >
+            <span>
+              views:
+            </span>
+             
+            <span>
+              1
+            </span>
+          </div>
+          <div
+            class="button-container"
+          >
+            <button
+              data-testid="remove-button"
+            >
+              <span>
+                remove
+              </span>
+            </button>
+          </div>
+        </div>
+      </article>
+    </aside>
+    <br />
+    <section
+      class="search-selectors-container"
+    >
+      <div
+        class="date-picker-container"
+      >
+        <label
+          for="date-picker"
+        >
+          Select date: 
+        </label>
+        <input
+          data-testid="date-selector"
+          id="date-picker"
+          name="date-picker"
+          type="date"
+          value="2022-05-12"
+        />
+      </div>
+      <div
+        class="results-limiter-container"
+      >
+        <label
+          for="result-limiter"
+        >
+          Number of Results: 
+        </label>
+        <select
+          data-testid="result-limit-selector"
+          id="result-limiter"
+          name="results"
+        >
+          <option
+            value="25"
+          >
+            25
+          </option>
+          <option
+            value="50"
+          >
+            50
+          </option>
+          <option
+            value="75"
+          >
+            75
+          </option>
+          <option
+            selected=""
+            value="100"
+          >
+            100
+          </option>
+          <option
+            value="200"
+          >
+            200
+          </option>
+        </select>
+      </div>
+    </section>
+    <section
+      class="searched-articles-container"
+    >
+      <h3
+        class="placeholder"
+      >
+        Loading...
+      </h3>
+    </section>
+  </div>
+</div>
+`;
+
+exports[`Wiki Search App should match snapshot with no articles 1`] = `
+<div>
+  <div
+    id="wiki-search-feature"
+  >
+    <h1
+      class="app-title"
+    >
+      Most Popular Pages Search
+    </h1>
+    <aside
+      class="pinned-articles-container"
+    >
+      <h2>
+        Pinned Pages: 
+      </h2>
+      <h3
+        class="placeholder"
+      >
+        no pinned pages...yet
+      </h3>
+    </aside>
+    <br />
+    <section
+      class="search-selectors-container"
+    >
+      <div
+        class="date-picker-container"
+      >
+        <label
+          for="date-picker"
+        >
+          Select date: 
+        </label>
+        <input
+          data-testid="date-selector"
+          id="date-picker"
+          name="date-picker"
+          type="date"
+          value="2022-05-12"
+        />
+      </div>
+      <div
+        class="results-limiter-container"
+      >
+        <label
+          for="result-limiter"
+        >
+          Number of Results: 
+        </label>
+        <select
+          data-testid="result-limit-selector"
+          id="result-limiter"
+          name="results"
+        >
+          <option
+            value="25"
+          >
+            25
+          </option>
+          <option
+            value="50"
+          >
+            50
+          </option>
+          <option
+            value="75"
+          >
+            75
+          </option>
+          <option
+            selected=""
+            value="100"
+          >
+            100
+          </option>
+          <option
+            value="200"
+          >
+            200
+          </option>
+        </select>
+      </div>
+    </section>
+    <section
+      class="searched-articles-container"
+    >
+      <h3
+        class="placeholder"
+      >
+        Loading...
+      </h3>
+    </section>
+  </div>
+</div>
+`;

@@ -1,0 +1,73 @@
+.article-container {
+  width: 100%;
+  height: fit-content;
+  box-shadow: 0px 0px 3px 0px grey;
+  border-radius: 3px;
+  display: flex;
+  /* gap: 0.5rem; */
+  padding: 7px;
+}
+
+.article-title {
+  word-wrap: break-word;
+  width: 60%;
+  /* max-width: 45%; */
+  min-width: 100px;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.article-title > span {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.article-views-container {
+  width: 20%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  /* max-width: 25%; */
+  /* min-width: 65px; */
+}
+
+.article-views-container > span:first-child {
+  font-size: 0.8rem;
+}
+
+.article-views-container > span:last-child {
+  font-size: 0.7rem;
+}
+
+.button-container {
+  display: flex;
+  width: 20%;
+}
+
+button {
+  width: 100%;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 0.5px solid gray;
+  background-color:rgb(238, 240, 234);
+  transition: background-color 0.1s;
+}
+
+button:hover {
+  background-color: rgb(209, 211, 212);
+  transition: background-color 0.2s;
+}
+
+button:active {
+  background-color: rgb(175, 175, 175);
+}
+
+button > span {
+  align-self: center;
+}

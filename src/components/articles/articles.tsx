@@ -18,7 +18,7 @@ export const Articles = React.memo((props: IArticlesProps): JSX.Element => {
     <article className='articles-container'>
       { articles.map((article: IArticle, rank: number) => {
         return (!limit || rank < limit)
-          ? <Article article={article} handleSave={handleSave} handleRemove={handleRemove}/>
+          ? <Article article={article} handleSave={handleSave} handleRemove={handleRemove} key={rank}/>
           : null
       })}
     </article>
