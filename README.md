@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+# Run This App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Pull this project down onto your local machine
+2. Make sure you have node installed
+3. In the project directory run `npm start` in the terminal
+4. Visit [http://localhost:3000](http://localhost:3000)
 
 ## Available Scripts
 
